@@ -47,6 +47,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     
     # Verify the user was returned to the home page.
     assert_redirected_to root_url
+    
+    # Simulate a user clicking log out in a second window.
+    delete logout_path
     follow_redirect!
     
     # Verify a log-in link appears.
@@ -81,4 +84,17 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     # Verify that the flash message doesnt appear on the new page.
     assert flash.empty?
   end
+  
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_empty cookies[:remember_token]
+  end
+  
+  test "login without remembering" do
+    # Log in to set the cookie.
+    log_in_as(@user, remember_me: '1')
+    # Log in again and verify the cookie is deleted
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
+  end 
 end
