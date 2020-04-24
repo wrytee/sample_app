@@ -1,0 +1,19 @@
+orange:
+  content: "oranges are tasty."
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+tau_manifesto:
+  content: "I like to flog my other work."
+  created_at: <%= 3.years.ago %>
+  user: michael
+
+cat_videos:
+  content: "Sad cats are sad."
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+most_recent:
+  content: "writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: michael
