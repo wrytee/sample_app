@@ -1,9 +1,27 @@
 # Create a main sample user.
-User.create!( name: "Example User",
-              email: "example@railstutorial.org",
-              password: "foobar",
-              password_confirmation: "foobar",
+User.create!( name: "matt",
+              email: "matthew.wright5@gmail.com",
+              password: "mattrules",
+              password_confirmation: "mattrules",
               admin: true,
+              activated: true,
+              activated_at: Time.zone.now )
+
+# Create a sample user for dad.
+User.create!( name: "steve",
+              email: "steve@bestbuildersperth.com",
+              password: "bestbuilders",
+              password_confirmation: "bestbuilders",
+              admin: false,
+              activated: true,
+              activated_at: Time.zone.now )
+
+# Create a sample user for Laura.
+User.create!( name: "laura",
+              email: "laura.harding1993@gmail.com",
+              password: "franklin",
+              password_confirmation: "franklin",
+              admin: false,
               activated: true,
               activated_at: Time.zone.now ) 
 
