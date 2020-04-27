@@ -24,7 +24,7 @@ User.create!( name: "laura",
               admin: false,
               activated: true,
               activated_at: Time.zone.now ) 
-
+=begin
 # Generate a bunch of additional users.
 99.times do |n|
   name = Faker::Name.name
@@ -52,3 +52,4 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+=end
